@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CurrencyDropdownComponent } from './components/currency-dropdown/currency-dropdown.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CurrencyDropdownComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
