@@ -5,3 +5,5 @@ export const CURRENCIES: Currency[] = [
   { code: 'GBP', symbol: '£' },
   { code: 'EUR', symbol: '€' },
 ];
+
+export const DEFAULT_PRICE = 10;
