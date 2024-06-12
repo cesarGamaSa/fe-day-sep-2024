@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CurrencyDropdownComponent } from './components/currency-dropdown/currency-dropdown.component';
+import { CurrencyService } from './services/currency.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,5 @@ import { CurrencyDropdownComponent } from './components/currency-dropdown/curren
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'fe-day-sep-2024';
+  protected currencyService = inject(CurrencyService);
 }
