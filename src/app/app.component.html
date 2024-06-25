@@ -1,5 +1,16 @@
 <main class="main">
   <h1>Angular Signals</h1>
 
-  <app-simple-signals></app-simple-signals>
+  <app-tabs>
+
+    <app-tab-item [tabTitle]="'Demo v1.0'">
+      <app-simple-signals></app-simple-signals>
+    </app-tab-item>
+
+    <app-tab-item [tabTitle]="'Demo v2.0'" (activeChange)="tabClicked()">
+      Change the selected tab and that's it, that the demo :)
+    </app-tab-item>
+
+    <app-tab-item [tabTitle]="'Demo v3.0'"></app-tab-item>
+  </app-tabs>
 </main>
