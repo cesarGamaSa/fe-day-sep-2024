@@ -1,10 +1,5 @@
 <main class="main">
   <h1>Angular Signals</h1>
 
-  <div class="container">
-    <app-currency-dropdown></app-currency-dropdown>
-    <p>The user has selected {{ currencyService.currentCurrency().code }}.</p>
-  </div>
-
-  <p>The product price is {{ currencyService.currentCurrency().symbol }} {{ currencyService.price() | number:'0.0-2' }}.</p>
+  <app-simple-signals></app-simple-signals>
 </main>

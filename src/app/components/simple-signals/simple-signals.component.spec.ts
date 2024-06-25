@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CurrencyDropdownComponent } from './currency-dropdown.component';
+import { CurrencyDropdownComponent } from './simple-signals.component';
 
 describe('CurrencyDropdownComponent', () => {
   let component: CurrencyDropdownComponent;

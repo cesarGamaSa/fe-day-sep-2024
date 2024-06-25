@@ -1,0 +1,11 @@
+<div class="container">
+  <select #dropdown (change)="currencyService.setCurrency(dropdown.value)">
+    @for (currency of currencyService.currencies(); track currency.code) {
+      <option [value]="currency.code">{{ currency.code }} ({{ currency.symbol }})</option>
+    }
+  </select>
+
+  <p>The user has selected {{ currencyService.currentCurrency().code }}.</p>
+</div>
+
+<p>The product price is {{ currencyService.currentCurrency().symbol }} {{ currencyService.price() | number:'0.0-2' }}.</p>
