@@ -5,8 +5,7 @@ import { CurrencyService } from '../../services/currency.service';
   selector: 'app-currency-dropdown',
   standalone: true,
   imports: [],
-  templateUrl: './currency-dropdown.component.html',
-  styleUrl: './currency-dropdown.component.scss'
+  templateUrl: './currency-dropdown.component.html'
 })
 export class CurrencyDropdownComponent {
   protected currencyService = inject(CurrencyService);
