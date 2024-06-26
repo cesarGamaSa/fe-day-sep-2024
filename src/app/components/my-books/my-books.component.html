@@ -1,1 +1,13 @@
-<p>my-books works!</p>
+<div class="my-books">
+  <div class="new-book">
+    <input placeholder="Enter new book title" [(ngModel)]="titleValue" />
+
+    <button (click)="onAddNewBook()">Add</button>
+  </div>
+
+  @for (book of store.books(); track book) {
+    <app-book [name]="book" (deleteBook)="onBookDelete(book)"></app-book>
+  }
+
+  <p>Showing {{ store.booksCount() }} book(s)</p>
+</div>
