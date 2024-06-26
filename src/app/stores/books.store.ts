@@ -3,18 +3,23 @@ import { patchState, signalStore, withComputed, withMethods, withState } from '@
 
 type BooksState = {
   books: string[];
-  order: 'asc' | 'desc';
+  sort: 'asc' | 'desc';
 };
 
 const initialState: BooksState = {
   books: [],
-  order: 'asc',
+  sort: 'asc',
 };
 
 export const BooksStore = signalStore(
   withState(initialState),
-  withComputed(({ books }) => ({
-    booksCount: computed(() => books().length)
+  withComputed(({ books, sort }) => ({
+    booksCount: computed(() => books().length),
+    sortedBooks: computed(() => {
+      const direction = sort() === 'asc' ? 1 : -1;
+
+      return books().sort((a, b) => direction * a.localeCompare(b));
+    })
   })),
   withMethods((store) => ({
     addBook(book: string) {
@@ -22,6 +27,9 @@ export const BooksStore = signalStore(
     },
     deleteBook(book: string) {
       patchState(store, { books: store.books().filter((b) => b !== book) })
+    },
+    updateSort(sort: 'asc' | 'desc') {
+      patchState(store, { sort });
     }
   }))
 );

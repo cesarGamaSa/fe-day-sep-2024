@@ -15,6 +15,7 @@ export class MyBooksComponent {
   readonly store = inject(BooksStore);
 
   titleValue: string = '';
+  sortValue: 'asc' | 'desc';
 
   onAddNewBook() {
     this.store.addBook(this.titleValue);
@@ -23,5 +24,9 @@ export class MyBooksComponent {
 
   onBookDelete(book: string) {
     this.store.deleteBook(book);
+  }
+
+  updateSort() {
+    this.store.updateSort(this.sortValue);
   }
 }

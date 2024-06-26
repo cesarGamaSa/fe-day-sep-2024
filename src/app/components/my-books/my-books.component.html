@@ -5,9 +5,16 @@
     <button (click)="onAddNewBook()">Add</button>
   </div>
 
-  @for (book of store.books(); track book) {
+  @if (store.booksCount() > 0) {
+    <select [(ngModel)]="sortValue" (change)="updateSort()">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  }
+
+  @for (book of store.sortedBooks(); track book) {
     <app-book [name]="book" (deleteBook)="onBookDelete(book)"></app-book>
   }
 
-  <p>Showing {{ store.booksCount() }} book(s)</p>
+  <p class="count">Showing {{ store.booksCount() }} book(s)</p>
 </div>

@@ -7,4 +7,14 @@
       margin-left: 1rem;
     }
   }
+
+  select {
+    display: flex;
+    margin-left: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .count {
+    text-align: center;
+  }
 }
