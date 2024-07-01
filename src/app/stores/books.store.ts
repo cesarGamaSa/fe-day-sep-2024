@@ -12,6 +12,7 @@ const initialState: BooksState = {
 };
 
 export const BooksStore = signalStore(
+  // add state properties to the store
   withState(initialState),
   withComputed(({ books, sort }) => ({
     booksCount: computed(() => books().length),

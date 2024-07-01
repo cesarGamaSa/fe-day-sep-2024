@@ -7,6 +7,7 @@ import { BookComponent } from '../book/book.component';
   selector: 'app-my-books',
   standalone: true,
   imports: [FormsModule, BookComponent],
+  // store provided on component level
   providers: [BooksStore],
   templateUrl: './my-books.component.html',
   styleUrl: './my-books.component.scss'
@@ -17,6 +18,7 @@ export class MyBooksComponent {
   titleValue: string = '';
   sortValue: 'asc' | 'desc';
 
+  // keep the component logic-free (all done on the store)
   onAddNewBook() {
     this.store.addBook(this.titleValue);
     this.titleValue = '';

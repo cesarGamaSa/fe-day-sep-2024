@@ -6,7 +6,6 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
     "serve:ssr:fe-day-sep-2024": "node dist/fe-day-sep-2024/server/server.mjs"
   },
   "private": true,
